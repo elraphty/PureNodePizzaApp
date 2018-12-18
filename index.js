@@ -1,9 +1,13 @@
-const http = require('http');
+/**
+ * Index file
+*/
 
-let server = http.createServer((req, res) => {
-  res.end('Hello world'+'\n'+'world 3')
-});
+const server = require('./lib/server');
 
-server.listen(5000, () => {
-  console.log('\x1b[33m%s\x1b[0m', `Server listening of PORT 5000`);
-});
+const app = {};
+
+app.init = () => {
+  server.init();
+}
+
+app.init();
